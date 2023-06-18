@@ -1,7 +1,6 @@
-<script>
     $(document).ready(function () {
         $.ajax({
-            url: '{{ route("show.links") }}',
+            url: '/',
             type: "POST",
             headers: {
                 'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
@@ -17,6 +16,5 @@
             error: function (msg) {
                 alert('Ошибка');
             }
-        });
+        })
     });
-</script>

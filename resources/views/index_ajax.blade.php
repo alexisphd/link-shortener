@@ -11,6 +11,7 @@
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
 </head>
 <body>
@@ -22,39 +23,37 @@
 
 <div class="row">
     <div class="col-12">
-            <div class="form-group container-fluid">
-                <label for="full_link">Ваша ссылка</label>
-                <input class="form-control" type="text" id="full_link" name="full_link">
-                @error('full_link')
-                <div class="text-danger">{{$message}}</div>
-                @enderror
-            </div>
-            <div class="form-group container-fluid">
-                <button class="btn btn-outline-warning mt-3" id="shorting_button">Сократить ссылку</button>
-            </div>
+        <div class="form-group container-fluid">
+            <label for="full_link">Ваша ссылка</label>
+            <input class="form-control" type="text" id="full_link" name="full_link">
+            @error('full_link')
+            <div class="text-danger">{{$message}}</div>
+            @enderror
+        </div>
+        <div class="form-group container-fluid">
+            <button class="btn btn-outline-warning mt-3" id="shorting_button">Сократить ссылку</button>
+        </div>
     </div>
 </div>
 <div class="row">
     <div class="col-12">
         <div class="form-group container-fluid table-responsive">
-        <table class="table mt-3 table-striped" id="links_table">
-            <thead class="text-center">
-            <tr>
-            <th>Номер</th>
-            <th>Ссылка</th>
-            <th>Сокращенная ссылка</th>
-            </tr>
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
-    </div>
+            <table class="table mt-3 table-striped" id="links_table">
+                <thead class="text-center">
+                <tr>
+                    <th>Номер</th>
+                    <th>Ссылка</th>
+                    <th>Сокращенная ссылка</th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
-
-@include('scripts.load')
-@include('scripts.get_table')
-@include('scripts.add_link')
-
+<script src="{{asset('js/app.js')}}" type="text/javascript" defer></script>
+<script src="{{asset('js/get_table.js')}}" type="text/javascript" defer></script>
+<script src="{{asset('js/add_link.js')}}"type="text/javascript" defer></script>
 </body>
 </html>
