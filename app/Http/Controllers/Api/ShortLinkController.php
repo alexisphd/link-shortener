@@ -8,6 +8,12 @@ use App\Models\Link;
 
 class ShortLinkController extends Controller
 {
+    /**
+     * api method for redirection to the full link (web-address)
+     *
+     * @param LinkRequest $link
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     public function checkLink(LinkRequest $link)
     {
 
